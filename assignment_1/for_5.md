@@ -7,7 +7,7 @@
 
 int main(void) {
   int size,i;
-  printf("크기를 입력하시오 : \n");
+  printf("다이아의 크기를 입력하시오 : \n");
   scanf("%d",&size);
   for(int i=0; i<size; i++)                       //입력받은 수 만큼의 층 구축
     {
