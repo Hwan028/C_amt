@@ -1,0 +1,26 @@
+나무 높이 측정
+
+
+
+```c 
+#include <stdio.h>                //입출력을 위한 헤더 파일
+#include <math.h>                 //수학 공식을 사용하기 위한 헤더 파일
+#define _CRT_SECURE_NO_WARNINGS   //비쥬얼 스튜디오 코드에서 scanf사용할때 오류뜨는걸 방지 하기위해 정의함
+
+int main(void)
+{
+    double height, distance, tree_height, degrees, radians;   //큰크기를 받기위해, 그리고 소수점때문에 더블로 선언함
+    
+    printf("나무와의 거리(단위는 미터): ");
+    scanf("%lf", &distance);                                  //더블로 선언하였으니 %lf로 받음
+    printf("측정자의 키(단위는 미터): ");
+    scanf("%lf", &height);
+    printf("각도(단위는 도): ");
+    scanf("%lf", &degrees);
+    
+    radians = degrees * (3.141592 / 180.0);                  //각도를 라디안으로 변환
+    tree_height = tan(radians) * distance + height;          /* tan(radian)은 (나무의 높이- 사용자의 키) / distance 이므로 distance를 곱해줌으로서 사용자의키를
+                                                               뺀 나무의 높이를 구할 수 있음 거기에 측정자의 키를 더해주면 나무의 높이가 나오고 그것을  tree_height에 저장해줌 */
+    printf("나무의 높이(단위는 미터): %lf \n", tree_height);  //더블로 선언하였으니 %lf로 받음
+  return 0;         //정상 작동시 0 보냄
+}
